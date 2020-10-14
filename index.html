@@ -18,15 +18,18 @@
   <style>
     .navbar{margin-bottom:0;}
     nav a{color: #563d72 !important;}
-    #main_tit{font-size:20px;}
-    .jumbotron{padding-top:60px;background-color:#563d72;}
+    .jumbotron{padding:60px 0 80px;background-color:#563d72;}
     .banner h2 span{display:inline-block;width:160px;height:160px;border:2px solid white;border-radius:20px;font-size:100px;line-height:160px;color:white;}
     .font_white{color:white;}
-    .jumbotron .text-center.font_white{margin:60px 0;font-size:24px;}
-    .jumbotron .text-center.font_white + p>a:hover{
-      color:#111;
-      text-decoration:none;
+    .jumbotron #jumbo_txt{margin:60px 0;font-size:24px;}
+    #jumbo_btn:hover{color:#111;text-decoration:none;}
+    h3{font-size:36px;}
+    .font22{font-size:22px;margin:30px 0 40px;line-height:32px;}
+    .content_txt{font-size:16px;line-height:26px}
+    .section02 article{
+      padding:30px 10px;
     }
+    footer{margin-bottom:1000px;}
   </style>
 
   <!-- 사용자 스크립트 -->
@@ -48,7 +51,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" id="main_tit">부트스트랩</a>
+            <a class="navbar-brand" href="#">부트스트랩</a>
           </div>
       
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -69,34 +72,80 @@
         </div><!-- /.container-fluid -->
       </nav>
     </header>
-    <section class="banner">
+    <section class="banner section01" >
       <div class="jumbotron">
         <div class="container">
           <h2 class="text-center">
             <span>B</span>            
           </h2>
-          <p class="text-center font_white col-md-8">
+          <p class="text-center font_white col-md-10 col-md-push-1" id="jumbo_txt">
             부트스트랩은 반응형이며 모바일 우선인 웹프로젝트 개발을 위한 가장 인기있는 HTML, CSS, JS 프레임워크입니다.
           </p>
-          <p class="text-center">
-            <a href="#" class="font_white">부트스트랩 다운로드</a>
+          <p class="text-center col-xs-12">
+            <a href="#" class="font_white" id="jumbo_btn">부트스트랩 다운로드</a>
           </p>
-          <script>
-            var tmp = $('.jumbotron .text-center.font_white').next().children();
-            console.log(tmp);
-            tmp.css({
-              'border':'1px solid white',
-              'border-radius':'10px',
-              'padding':'20px'
-            });
+        </div>
+      </div>
+    </section>
+    <section class="content section02">
+      <div class="container">
+        <h3 class="text-center">모든사람과 모든곳을 위해 설계되었습니다.</h3>
+        <p class="text-center font22">부트스트랩은 프론트엔드 웹개발을 더 빠르고 쉽게 만들어줍니다. 모든 기술 수준의 사람들, 모든 형태의 기기들, 모든 크기의 프로젝트들을 위해 만들어졌습니다.</p>
+        <div class="row">
+          <hr class="col-sm-2 col-sm-push-5">
+        </div>
+        <article class="article01 col-sm-4">
+          <div class="img_box">
+            <img class="img-responsive" src="./images/sass-less.png" alt="사스 레스">
+          </div>
+          <p class="text-center font22">프리프로세서</p>
+          <p class="text-center content_txt">부트스트랩은 평범한 CSS 로 제공합니다만, 그것의 소스코드는 2개의 인기있는 CSS 프리프로세서인 Less 와 Sass 를 사용합니다. 신속하게 프리컴파일된 CSS 로 시작하거나 소스를 빌드하세요.</p>
+        </article>
+        <article class="article02 col-sm-4">
+          <div class="img_box">
+            <img class="img-responsive" src="./images/devices.png" alt="디바이스">
+          </div>
+          <p class="text-center font22">하나의 프레임워크, 모든 기기.</p>
+          <p class="text-center content_txt">부트스트랩은 웹사이트와 어플리케이션을 단일 코드 베이스로 CSS 미디어 쿼리를 이용하여 휴대폰에서부터 태블릿, 데스크탑까지 쉽고 효과적으로 크기를 조절합니다.</p>
+        </article>
+        <article class="article03 col-sm-4">
+          <div class="img_box">
+            <img class="img-responsive" src="./images/components.png" alt="컴퍼넌트">
+          </div>
+          <p class="text-center font22">많은 기능들</p>
+          <p class="text-center content_txt">부트스트랩과 함께, 보통의 HTML 요소들, 맞춤형 HTML 과 CSS 콤포넌트들, 그리고 놀라운 jQuery 플러그인들로 광범위하고 아름다운 문서들을 가질 수 있습니다.</p>
+        </article>
+        <div class="row col-xs-12">
+          <hr class="col-sm-2 col-sm-push-5">
+        </div>
+        <div class="row col-xs-12 text-center">
+          <p class="text-center font22">부트스트랩은 오픈소스 입니다. 깃허브에서 호스트되고, 개발되고, 유지보수 됩니다.</p>
+          <a href="#" class="btn btn-success btn-lg" role="button">깃허브 바로가기</a>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <section class="images section03">
+      <div class="container">
+        <h3 class="text-center">부트스트랩으로 만든 패이지</h3>
+        <p class="text-center font22">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quas doloribus sed ex delectus voluptatem fugit accusamus error animi nemo consequatur, labore, ut reprehenderit dolores quam? Quibusdam beatae tenetur cupiditate!</p>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="img_box">
+            <img class="img-responsive" src="./images/img01.jpg" alt="이미지1">
             
-          </script>
-
-
+          </div>         
         </div>
       </div>
     </section>
     <footer></footer>
   </div>
+
+  <script>
+    $('#jumbo_btn').css({
+      'border':'1px solid white',
+      'border-radius':'10px',
+      'padding':'20px'
+    });            
+  </script>
 </body>
 </html>
