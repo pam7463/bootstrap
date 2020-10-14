@@ -16,8 +16,17 @@
   
   <!-- 사용자 스타일 -->
   <style>
+    .navbar{margin-bottom:0;}
     nav a{color: #563d72 !important;}
     #main_tit{font-size:20px;}
+    .jumbotron{padding-top:60px;background-color:#563d72;}
+    .banner h2 span{display:inline-block;width:160px;height:160px;border:2px solid white;border-radius:20px;font-size:100px;line-height:160px;color:white;}
+    .font_white{color:white;}
+    .jumbotron .text-center.font_white{margin:60px 0;font-size:24px;}
+    .jumbotron .text-center.font_white + p>a:hover{
+      color:#111;
+      text-decoration:none;
+    }
   </style>
 
   <!-- 사용자 스크립트 -->
@@ -30,7 +39,7 @@
   <div class="wrap">
     <header>
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -60,7 +69,33 @@
         </div><!-- /.container-fluid -->
       </nav>
     </header>
-    <section></section>
+    <section class="banner">
+      <div class="jumbotron">
+        <div class="container">
+          <h2 class="text-center">
+            <span>B</span>            
+          </h2>
+          <p class="text-center font_white col-md-8">
+            부트스트랩은 반응형이며 모바일 우선인 웹프로젝트 개발을 위한 가장 인기있는 HTML, CSS, JS 프레임워크입니다.
+          </p>
+          <p class="text-center">
+            <a href="#" class="font_white">부트스트랩 다운로드</a>
+          </p>
+          <script>
+            var tmp = $('.jumbotron .text-center.font_white').next().children();
+            console.log(tmp);
+            tmp.css({
+              'border':'1px solid white',
+              'border-radius':'10px',
+              'padding':'20px'
+            });
+            
+          </script>
+
+
+        </div>
+      </div>
+    </section>
     <footer></footer>
   </div>
 </body>
