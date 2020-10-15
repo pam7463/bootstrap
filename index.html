@@ -4,46 +4,157 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>부트스트랩</title>
-  <!-- 제이쿼리 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- 부트스트랩 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- 슬라이더 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-  
-  <!-- 사용자 스타일 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <!-- 합쳐지고 최소화된 최신 CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <!-- 부가적인 테마 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <style>
+    .wrap{overflow: hidden;}
     .navbar{margin-bottom:0;}
-    nav a{color: #563d72 !important;}
-    .jumbotron{padding:60px 0 80px;background-color:#563d72;}
-    .banner h2 span{display:inline-block;width:160px;height:160px;border:2px solid white;border-radius:20px;font-size:100px;line-height:160px;color:white;}
-    .font_white{color:white;}
-    .jumbotron #jumbo_txt{margin:60px 0;font-size:24px;}
-    #jumbo_btn:hover{color:#111;text-decoration:none;}
-    h3{font-size:36px;}
-    .font22{font-size:22px;margin:30px 0 40px;line-height:32px;}
-    .content_txt{font-size:16px;line-height:26px}
-    .section02 article{
-      padding:30px 10px;
+
+   .navbar a{color:#563d7c !important;}
+   .jumbotron{
+    background-color:#563d7c !important;
+    padding:60px 0 30px;
+   }
+   .inline-block{display:inline-block;}
+   .jumbotron h1{margin-bottom:30px;}
+   .jumbotron h1 span{
+     width:160px;
+     height:160px;
+     border:1px solid White;
+     border-radius: 10%;
+     line-height:160px;
+     color:white;
+     font-size:100px;
+   }
+   .jumbotron p{
+     font-size:20px;
+     color:white;
+     margin-bottom:20px;
+   }
+   .jumbotron p a{
+     border:1px solid White;
+     background-color:transparent !important;
+     color:white;
+  }
+  h2{font-size:30px;margin:30px 0;}
+  p.large{font-size:20px;margin:20px 0;}
+  p.mediam{font-size:18px;}
+  p.small{font-size:16px;line-height:24px;}
+  .short_line{margin-top:40px;margin-bottom:50px;}
+  .thumbnail {
+    margin-bottom:40px;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    border:none;
+    border-radius:0;
+    }
+    h3{font-size:24px;margin-bottom:20px;}
+    .section01,.section02{
+      border-bottom:1px solid #cccccc;
+      padding-bottom:30px;
+    }
+    .section02 .img_box{padding:10px;position:relative;}
+    
+    .section02 .img_box>img{
+      width:100%;
+    }
+    .section02 .img_box>img:hover{
+      animation:exp 0.2s;
+    }
+    @keyframes exp{
+      0%{transform:translate(0px,0px);}
+      10%{transform:translate(10px,10px);}
+      20%{transform:translate(0px,0px);}
+      30%{transform:translate(-10px,-10px);}
+      40%{transform:translate(0px,0px);}
+      50%{transform:translate(5px,5px);}
+      60%{transform:translate(0px,0px);}
+      70%{transform:translate(-5px,-5px);}
+      80%{transform:translate(0px,0px);}
+      90%{transform:translate(2px,2px);}
+      100%{transform:translate(0px,0px);}
     }
     
-    footer{margin-bottom:1000px;}
-
-      @media(min-width:992px){
-        .modal-dialog{
-        width:500px !important;
-      }
+    .open_btn,.close_btn{cursor:pointer;}
+    .modal-header{border-bottom:none;padding-top:0;padding-bottom:0;}
+    .modal-dialog{width:400px;}
+    .modal_box{
+      padding:0 10px 20px;
+      display:flex;
+      flex-flow:column nowrap;
     }
+    .modal_box>span{font-size:48px;align-self:flex-end;}
+    .modal_box>img{width:100%;}
+    .section02 .col-xs-12,
+    .section02 .col-sm-6,
+    .section02 .col-md-3{
+      padding-left:0;
+      padding-right:0;
+    }
+    footer{
+      padding:20px 0;
+    }
+    footer .row{
+      padding:10px 0;
+    }
+    a.label{
+      padding:10px;
+      font-size:14px;
+    }
+    small{line-height:0.8em;}
+    span.badge{margin-left:10px;}
+
+
+   /* 작은 기기들 (태블릿, 768px 이상) */
+    @media (min-width:768px) {
+      .jumbotron{padding:70px 0 35px;}
+      .jumbotron h1{margin-bottom:40px;}
+      .jumbotron p{font-size:22px;margin-bottom:30px;}
+      h2{font-size:40px;margin-top:40px;}
+      p.large{font-size:22px;margin-top:30px;}
+      p.mediam{font-size:20px;}
+      p.small{font-size:18px;line-height:26px;}
+      h3{font-size:30px;margin-bottom:26px;}     
+    }
+
+
+
+
+
+
+    /* 중간 기기들 (데스크탑, 992px 이상) */
+    @media (min-width:992px) {
+      .jumbotron{padding:80px 0 40px;}
+      .jumbotron h1{margin-bottom:50px;}
+      .jumbotron p{font-size:26px;margin-bottom:40px;}      
+    }
+
+
+
+
+    /* 큰 기기들 (큰 데스크탑, 1200px 이상) */
+    @media (min-width:1200px) {
+      .jumbotron{padding:90px 0 45px;}
+      .jumbotron h1{margin-bottom:60px;}
+      .jumbotron p{font-size:30px;margin-bottom:50px;}      
+    }
+
   </style>
-
-  <!-- 사용자 스크립트 -->
   <script>
-
+    $(function(){
+      $('.open_btn').click(function(){
+        $(this).next().modal('show');
+      });
+      $('.close_btn').click(function(){
+        $('.modal').modal('hide');
+      });
+    })
   </script>
-
 </head>
 <body>
   <div class="wrap">
@@ -52,24 +163,24 @@
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">부트스트랩</a>
-          </div>      
+          </div>
+      
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="#">시작하기</a></li>
               <li><a href="#">CSS</a></li>
-              <li><a href="#">콤퍼넌트</a></li>
+              <li><a href="#">콤포넌트</a></li>
               <li><a href="#">자바스크립트</a></li>
               <li><a href="#">맞춤화</a></li>
             </ul>
-            
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#">전시관</a></li>
               <li><a href="#">블로그</a></li>
@@ -78,466 +189,355 @@
         </div><!-- /.container-fluid -->
       </nav>
     </header>
-    <section class="banner section01" >
+    <section class="banner">
       <div class="jumbotron">
         <div class="container">
-          <h2 class="text-center">
-            <span>B</span>            
-          </h2>
-          <p class="text-center font_white col-md-10 col-md-push-1" id="jumbo_txt">
-            부트스트랩은 반응형이며 모바일 우선인 웹프로젝트 개발을 위한 가장 인기있는 HTML, CSS, JS 프레임워크입니다.
-          </p>
-          <p class="text-center col-xs-12">
-            <a href="#" class="font_white" id="jumbo_btn">부트스트랩 다운로드</a>
-          </p>
+          <h1 class="text-center">
+            <span class="inline-block text-center">B</span>
+          </h1>
+          <p class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-12 col-md-offset-0 col-lg-10 col-lg-offset-1 text-center">부트스트랩은 반응형이며 모바일 우선인 웹프로젝트 개발을 위한 가장 인기있는 HTML, CSS, JS 프레임워크입니다.</p>
+          <p class="text-center"><a class="btn btn-lg" href="#" role="button">부트스트랩 다운로드</a></p>
         </div>
       </div>
     </section>
-    <section class="content section02">
+    <section class="section01">
       <div class="container">
-        <h3 class="text-center">모든사람과 모든곳을 위해 설계되었습니다.</h3>
-        <p class="text-center font22">부트스트랩은 프론트엔드 웹개발을 더 빠르고 쉽게 만들어줍니다. 모든 기술 수준의 사람들, 모든 형태의 기기들, 모든 크기의 프로젝트들을 위해 만들어졌습니다.</p>
+        <h2 class="text-center">모든사람과 모든곳을 위해 설계되었습니다.</h2>
+        <p class="text-center large">부트스트랩은 프론트엔드 웹개발을 더 빠르고 쉽게 만들어줍니다. 모든 기술 수준의 사람들, 모든 형태의 기기들, 모든 크기의 프로젝트들을 위해 만들어졌습니다.</p>
         <div class="row">
-          <hr class="col-sm-2 col-sm-push-5">
+          <hr class="short_line col-xs-12 col-sm-2 col-sm-offset-5">
         </div>
-        <article class="article01 col-sm-4">
-          <div class="img_box">
-            <img class="img-responsive" src="./images/sass-less.png" alt="사스 레스">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="thumbnail">
+              <img src="images/sass-less.png" alt="sdss-less">
+              <div class="caption">
+                <h3 class="text-center">프리프로세서</h3>
+                <p class="text-center small">부트스트랩은 평범한 CSS 로 제공합니다만, 그것의 소스코드는 2개의 인기있는 CSS 프리프로세서인 Less 와 Sass 를 사용합니다. 신속하게 프리컴파일된 CSS 로 시작하거나 소스를 빌드하세요.</p>
+              </div>
+            </div>
           </div>
-          <p class="text-center font22">프리프로세서</p>
-          <p class="text-center content_txt">부트스트랩은 평범한 CSS 로 제공합니다만, 그것의 소스코드는 2개의 인기있는 CSS 프리프로세서인 Less 와 Sass 를 사용합니다. 신속하게 프리컴파일된 CSS 로 시작하거나 소스를 빌드하세요.</p>
-        </article>
-        <article class="article02 col-sm-4">
-          <div class="img_box">
-            <img class="img-responsive" src="./images/devices.png" alt="디바이스">
+          <div class="col-xs-12 col-sm-4">
+            <div class="thumbnail">
+              <img src="images/devices.png" alt="devices">
+              <div class="caption">
+                <h3 class="text-center">하나의 프레임워크, 모든 기기.</h3>
+                <p class="text-center small">부트스트랩은 웹사이트와 어플리케이션을 단일 코드 베이스로 CSS 미디어 쿼리를 이용하여 휴대폰에서부터 태블릿, 데스크탑까지 쉽고 효과적으로 크기를 조절합니다.</p>
+              </div>
+            </div>
           </div>
-          <p class="text-center font22">하나의 프레임워크, 모든 기기.</p>
-          <p class="text-center content_txt">부트스트랩은 웹사이트와 어플리케이션을 단일 코드 베이스로 CSS 미디어 쿼리를 이용하여 휴대폰에서부터 태블릿, 데스크탑까지 쉽고 효과적으로 크기를 조절합니다.</p>
-        </article>
-        <article class="article03 col-sm-4">
-          <div class="img_box">
-            <img class="img-responsive" src="./images/components.png" alt="컴퍼넌트">
+          <div class="col-xs-12 col-sm-4">
+            <div class="thumbnail">
+              <img src="images/components.png" alt="components">
+              <div class="caption">
+                <h3 class="text-center">많은 기능들</h3>
+                <p class="text-center small">부트스트랩과 함께, 보통의 HTML 요소들, 맞춤형 HTML 과 CSS 콤포넌트들, 그리고 놀라운 jQuery 플러그인들로 광범위하고 아름다운 문서들을 가질 수 있습니다.</p>
+              </div>
+            </div>
           </div>
-          <p class="text-center font22">많은 기능들</p>
-          <p class="text-center content_txt">부트스트랩과 함께, 보통의 HTML 요소들, 맞춤형 HTML 과 CSS 콤포넌트들, 그리고 놀라운 jQuery 플러그인들로 광범위하고 아름다운 문서들을 가질 수 있습니다.</p>
-        </article>
-        <div class="row col-xs-12">
-          <hr class="col-sm-2 col-sm-push-5">
         </div>
-        <div class="row col-xs-12 text-center">
-          <p class="text-center font22">부트스트랩은 오픈소스 입니다. 깃허브에서 호스트되고, 개발되고, 유지보수 됩니다.</p>
-          <a href="#" class="btn btn-success btn-lg" role="button">깃허브 바로가기</a>
+        <div class="row">
+          <hr class="short_line col-xs-12 col-sm-2 col-sm-offset-5">
         </div>
+        <p class="large text-center">부트스트랩은 오픈소스 입니다. 깃허브에서 호스트되고, 개발되고, 유지보수 됩니다.</p>
+        <p class="text-center">
+          <a class="btn btn-success btn-lg" href="#" role="button">깃허브 바로가기</a>
+        </p>
       </div>
     </section>
-    <hr>
-    <section class="images section03">
+
+    <section class="section02">
       <div class="container">
-        <h3 class="text-center">부트스트랩으로 만든 패이지</h3>
-        <p class="text-center font22">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quas doloribus sed ex delectus voluptatem fugit accusamus error animi nemo consequatur, labore, ut reprehenderit dolores quam? Quibusdam beatae tenetur cupiditate!</p>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img01.jpg" alt="이미지1" data-toggle="modal" data-target="#myModal01">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img01.jpg" alt="이미지1">
-                    <h4>모달창1</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
+        <h2 class="text-center">부트스트랩으로 만든 패이지</h2>
+        <p class="text-center large">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum odio quis, quia voluptatem quibusdam neque veniam officia. Labore consequuntur repellat dolores illo modi temporibus? Veritatis at nostrum quis ab voluptas.</p>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="img_box">
+              <img class="open_btn" src="images/modal01.png" alt="modal01">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal01.png" alt="modal1">
+                      <h3>모달창</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal02.png" alt="modal02">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal02.png" alt="modal2">
+                      <h3>모달창2</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal03.png" alt="modal03">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal03.png" alt="modal3">
+                      <h3>모달창3</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal04.png" alt="modal04">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal04.png" alt="modal4">
+                      <h3>모달창4</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>         
           </div>
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img02.jpg" alt="이미지1" data-toggle="modal" data-target="#myModal02">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img02.jpg" alt="이미지1">
-                    <h4>모달창2</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="img_box">
+              <img class="open_btn" src="images/modal05.png" alt="modal05">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal05.png" alt="modal5">
+                      <h3>모달창5</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
                   </div>
                 </div>
               </div>
-            </div>
-          </div>         
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img03.jpg" alt="이미지3" data-toggle="modal" data-target="#myModal03">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img03.jpg" alt="이미지3">
-                    <h4>모달창3</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal06.png" alt="modal06">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal06.png" alt="modal6">
+                      <h3>모달창6</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
                   </div>
                 </div>
               </div>
-            </div>
-          </div>     
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img04.jpg" alt="이미지4" data-toggle="modal" data-target="#myModal04">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal04" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img04.jpg" alt="이미지4">
-                    <h4>모달창4</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal07.png" alt="modal07">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal07.png" alt="modal7">
+                      <h3>모달창7</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal08.png" alt="modal08">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal08.png" alt="modal8">
+                      <h3>모달창8</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>         
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img05.jpg" alt="이미지5" data-toggle="modal" data-target="#myModal05">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal05" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img05.jpg" alt="이미지5">
-                    <h4>모달창5</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="img_box">
+              <img class="open_btn" src="images/modal09.png" alt="modal09">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal09.png" alt="modal9">
+                      <h3>모달창9</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal10.png" alt="modal10">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal10.png" alt="modal10">
+                      <h3>모달창10</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal11.png" alt="modal11">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal11.png" alt="modal11">
+                      <h3>모달창11</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal12.png" alt="modal12">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal12.png" alt="modal12">
+                      <h3>모달창12</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>         
           </div>
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img06.jpg" alt="이미지6" data-toggle="modal" data-target="#myModal06">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal06" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img06.jpg" alt="이미지6">
-                    <h4>모달창6</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="img_box">
+              <img class="open_btn" src="images/modal13.png" alt="modal13">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal13.png" alt="modal13">
+                      <h3>모달창13</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
                   </div>
                 </div>
               </div>
-            </div>
-          </div>         
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img07.jpg" alt="이미지7" data-toggle="modal" data-target="#myModal07">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal07" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img07.jpg" alt="이미지7">
-                    <h4>모달창7</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal14.png" alt="modal14">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal14.png" alt="modal14">
+                      <h3>모달창14</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
                   </div>
                 </div>
               </div>
-            </div>
-          </div>     
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img08.jpg" alt="이미지8" data-toggle="modal" data-target="#myModal08">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal08" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img08.jpg" alt="이미지8">
-                    <h4>모달창8</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal15.png" alt="modal15">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal15.png" alt="modal15">
+                      <h3>모달창15</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img09.jpg" alt="이미지9" data-toggle="modal" data-target="#myModal09">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal09" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img09.jpg" alt="이미지9">
-                    <h4>모달창9</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
+            </div> 
+            <div class="img_box">
+              <img class="open_btn" src="images/modal16.png" alt="modal16">
+              <div class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal_box">
+                      <span class="close_btn">&times</span>
+                      <img src="images/modal16.png" alt="modal16">
+                      <h3>모달창16</h3>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam praesentium fuga ipsum laboriosam, quae temporibus ad impedit sint aspernatur ratione atque facilis accusantium voluptatem aut asperiores tempora ex. Rerum, nesciunt.</p>
+                      <button type="button" class="close_btn btn btn-warning">닫기</button>
+                    </div>                    
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img10.jpg" alt="이미지6" data-toggle="modal" data-target="#myModal10">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img10.jpg" alt="이미지10">
-                    <h4>모달창10</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>         
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img11.jpg" alt="이미지11" data-toggle="modal" data-target="#myModal11">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img11.jpg" alt="이미지11">
-                    <h4>모달창11</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>     
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img12.jpg" alt="이미지12" data-toggle="modal" data-target="#myModal12">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img12.jpg" alt="이미지12">
-                    <h4>모달창12</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img13.jpg" alt="이미지9" data-toggle="modal" data-target="#myModal13">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img13.jpg" alt="이미지13">
-                    <h4>모달창13</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img14.jpg" alt="이미지14" data-toggle="modal" data-target="#myModal14">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img14.jpg" alt="이미지14">
-                    <h4>모달창14</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>         
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img15.jpg" alt="이미지15" data-toggle="modal" data-target="#myModal15">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img15.jpg" alt="이미지15">
-                    <h4>모달창15</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>     
-          <div class="img_box">
-            <!-- 트리거 -->
-            <img class="img-responsive btn" src="./images/img16.jpg" alt="이미지16" data-toggle="modal" data-target="#myModal16">
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal16" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <!-- <h4 class="modal-title" id="myModalLabel">Modal title</h4> -->
-                  </div>
-                  <div class="modal-body">
-                    <img class="img-responsive" src="./images/img16.jpg" alt="이미지16">
-                    <h4>모달창16</h4>        
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vero sint libero dolorum magnam repellat. Nemo fugiat illo iste distinctio aliquid inventore, fugit sunt, ratione tempora error officia quam at?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg col-xs-12" data-dismiss="modal">닫기</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </div>         
           </div>
         </div>
       </div>
     </section>
-    <footer></footer>
-  </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <a href="#" class="label label-primary col-xs-2 col-xs-offset-4">github<span class="badge">10</span></a>
+          <a href="#" class="label label-success col-xs-2 col-xs-offset-1">twitter<span class="badge">2</span></a>
+          <a href="#" class="label label-info col-xs-2 col-xs-offset-1">facebook<span class="badge">8</span></a>
+        </div>
+        <div class="row">
+          <p class="col-xs-8 col-xs-offset-2 text-center">
+            <small>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis nulla ratione deserunt? Nulla neque nostrum quas esse perferendis, eaque recusandae architecto id impedit iure dolorem laborum. Deleniti ipsum molestiae esse.Nam, ex doloribus. Odit veniam iure quasi voluptatum, laboriosam, libero ea consequatur, quam placeat provident suscipit expedita ipsam repellat dolorum minus blanditiis itaque eos laborum. Nam optio quae sint asperiores.</small>
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-xs-2 col-xs-offset-2 text-center"><a href="#">처음으로</a></div>
+          <div class="col-xs-2 text-center"><a href="#">두번째로</a></div>
+          <div class="col-xs-2 text-center"><a href="#">세번째로</a></div>
+          <div class="col-xs-2 text-center"><a href="#">네번째로</a></div>
+        </div>
 
-  <script>
-    $('#jumbo_btn').css({
-      'border':'1px solid white',
-      'border-radius':'10px',
-      'padding':'20px'
-    });            
-  </script>
+      </div>
+    </footer>
 </body>
 </html>
